@@ -1,0 +1,62 @@
+{
+	// 基础格式化设置
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.requireConfig": true,
+	"prettier.useEditorConfig": false,
+
+	// 针对不同语言的格式化设置
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+
+	// ESLint 配置
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+
+	// TypeScript 版本设置
+	"typescript.tsdk": "./node_modules/typescript/lib",
+
+	// 保存时自动修复
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+
+	// 解决 Prettier 和 ESLint 冲突
+	"prettier.eslintIntegration": true,
+
+	// 启用 ESLint 输出面板，便于调试
+	"eslint.outputChannel.verbosity": "debug",
+
+	// 强制 ESLint 使用工作区版本
+	"eslint.workingDirectories": [{"mode": "auto"}]
+}

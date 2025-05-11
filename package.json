@@ -1,0 +1,48 @@
+{
+	"name": "my-monorepo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+		"prepare": "husky",
+		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
+		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.4.1",
+	"devDependencies": {
+		"@commitlint/cli": "19.2.0",
+		"@commitlint/config-conventional": "19.1.0",
+		"@eslint/js": "^8.56.0",
+		"@typescript-eslint/eslint-plugin": "^7.18.0",
+		"@typescript-eslint/parser": "^7.2.0",
+		"eslint": "^8.57.1",
+		"eslint-config-prettier": "^10.1.5",
+		"eslint-plugin-react": "^7.37.5",
+		"globals": "^16.1.0",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"prettier": "^3.5.3",
+		"typescript": "^5.4.3",
+		"typescript-eslint": "^7.0.0"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"**/*.{json,md}": [
+			"prettier --write"
+		]
+	}
+}
