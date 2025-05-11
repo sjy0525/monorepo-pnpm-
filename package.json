@@ -8,7 +8,13 @@
 		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
 		"prepare": "husky",
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix"
+		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
+		"commit": "git-cz"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	},
 	"husky": {
 		"hooks": {
@@ -26,6 +32,8 @@
 		"@eslint/js": "^8.56.0",
 		"@typescript-eslint/eslint-plugin": "^7.18.0",
 		"@typescript-eslint/parser": "^7.2.0",
+		"commitizen": "4.3.0",
+		"cz-conventional-changelog": "3.3.0",
 		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^10.1.5",
 		"eslint-plugin-react": "^7.37.5",
