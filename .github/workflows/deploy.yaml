@@ -1,0 +1,38 @@
+name:
+    deploy
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: install and build
+              run: |
+                pnpm install
+                pnpm run build-monorepo
+
+            - name: deploy to github pages
+              if:
+                success()
+              uses: 
+                peaceiris/actions-gh-pages@v3
+              with:
+                target_branch: gh-pages
+                build_dir:
+                    dist-monorepo
+                commit_message: 'chore: deploy to gh-pages'
+                keep_history:
+                    false
+                jekyll: false                        
+             env:
+                - GITHUB_TOKEN: 
+                    ${{ secrets.GITHUB_TOKEN }}
+            
