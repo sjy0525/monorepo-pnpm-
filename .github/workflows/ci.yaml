@@ -1,10 +1,39 @@
 name: CI
+<<<<<<< HEAD
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
+=======
+<<<<<<< HEAD
+
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+=======
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+>>>>>>> 651847b (fix: 修改脚本bug)
+>>>>>>> temp-fix
 
 jobs:
     test:
         runs-on: ubuntu-latest
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '16'
+=======
+>>>>>>> temp-fix
         strategy:
             matrix:
                 node-version: [20, 18, 16]
@@ -15,9 +44,22 @@ jobs:
               with:
                   node-version: '20'
               # 使用了一个名为 setup-node 的官方动作，设置 Node.js 环境，并指定了要安装的 Node.js 版本为 20
+<<<<<<< HEAD
+=======
+>>>>>>> 651847b (fix: 修改脚本bug)
+>>>>>>> temp-fix
 
             - name: Install dependencies
               run: pnpm install
 
             - name: Run lint
               run: pnpm lint
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+            - name: Run format
+              run: pnpm format
+=======
+>>>>>>> 651847b (fix: 修改脚本bug)
+>>>>>>> temp-fix
