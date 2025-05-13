@@ -15,7 +15,7 @@ module.exports = {
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
-		project: 'd:\\monorepo+pnpm\\my-monorepo\\tsconfig.eslint.json',
+		project: './tsconfig.eslint.json',
 	},
 	plugins: ['@typescript-eslint'],
 	rules: {
