@@ -1,0 +1,23 @@
+name: CI
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20, 18, 16]
+        steps:
+            - uses: actions/checkout@v4
+            # 使用了一个名为 checkout 的官方动作，用于拉取代码库
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+              # 使用了一个名为 setup-node 的官方动作，设置 Node.js 环境，并指定了要安装的 Node.js 版本为 20
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Run lint
+              run: pnpm lint
