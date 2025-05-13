@@ -1,5 +1,6 @@
 {
 	"name": "my-monorepo",
+	"private": true,
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -8,7 +9,8 @@
 		"prepare": "husky",
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
 		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
-		"commit": "git-cz"
+		"commit": "git-cz",
+		"build": "pnpm -r --filter ='./packages/*' run build"
 	},
 	"config": {
 		"commitizen": {
