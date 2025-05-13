@@ -4,18 +4,29 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
 		"prepare": "husky",
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
 		"lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
 		"commit": "git-cz",
-		"build": "pnpm -r --filter ='./packages/*' run build"
+		"build": "pnpm -r --filter ='./packages/*' run build",
+		"test": "node test.js"
 	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
 			"commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"pnpm": {
+		"overrides": {
+			"@typescript-eslint/parser": "^7.2.0",
+			"@typescript-eslint/eslint-plugin": "^7.2.0",
+			"typescript": "^5.4.3",
+			"eslint": "^8.57.1",
+			"eslint-config-prettier": "^10.1.5"
 		}
 	},
 	"config": {
@@ -41,6 +52,7 @@
 		"globals": "^16.1.0",
 		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
+		"lodash": "^4.17.21",
 		"prettier": "^3.5.3",
 		"typescript": "^5.4.3",
 		"typescript-eslint": "^7.0.0"
@@ -53,5 +65,8 @@
 		"**/*.{json,md}": [
 			"prettier --write"
 		]
+	},
+	"dependencies": {
+		"chalk": "^5.4.1"
 	}
 }

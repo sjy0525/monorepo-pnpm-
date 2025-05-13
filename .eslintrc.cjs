@@ -43,6 +43,6 @@ module.exports = {
 		'**/pnpm-lock.yaml',
 		'**/package-lock.json',
 		'**/yarn.lock',
-		'.eslintrc.js',
+		'.eslintrc.cjs',
 	],
 };

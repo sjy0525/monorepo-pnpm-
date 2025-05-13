@@ -9,7 +9,6 @@
 		"target": "es6", // 设置编译后的目标版本为 ES6
 		"sourceMap": true, // 生成源映射文件
 		"module": "commonjs", // 使用 CommonJS 模块系统
-		"jsx": "preserve", // 保留 JSX 语法
 		"strict": true, // 启用所有严格类型检查选项
 		"moduleResolution": "node", // 使用 Node.js 模块解析策略
 		"resolveJsonModule": true, // 允许导入 JSON 模块
@@ -26,12 +25,13 @@
 		"isolatedModules": true, // 每个文件作为单独的模块进行编译
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["packages/*/src"]
+			"@/*": ["packages/*"]
 		}
 	},
 	"include": [
-		"packages/*/src/**/*.ts", // 包含所有子目录下的 `.ts` 文件
-		"packages/*/index.ts"
+		"packages/**/*.ts", // 包含所有子目录下的 `.ts` 文件
+		"packages/*/index.ts",
+		"./**/*.js"
 	],
 	"exclude": [
 		"node_modules", // 排除 `node_modules` 目录
@@ -39,5 +39,9 @@
 		"**/*/dist", // 排除所有 `dist` 目录
 		"test" // 排除 `test` 目录
 	],
-	"references": [{"path": "./packages/app1"}]
+	"references": [
+		{"path": "./packages/app1"},
+		{"path": "./packages/app2"},
+		{"path": "./packages/sdk"}
+	]
 }

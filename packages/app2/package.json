@@ -1,13 +1,19 @@
 {
 	"name": "app2",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"version": "0.0.0",
+	"main": "dist/index.js",
+	"files": [
+		"dist"
+	],
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"watch": "tsc index.ts --outDir dist --watch",
+		"build": "rimraf dist && tsc index.ts --outDir dist",
+		"prepublish": "pnpm run build"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"packageManager": "pnpm@10.4.1"
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"lodash": "3"
+	}
 }
