@@ -1,4 +1,5 @@
 name: CI
+<<<<<<< HEAD
 
 on:
     push:
@@ -7,10 +8,15 @@ on:
     pull_request:
         branches:
             - main
+=======
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+>>>>>>> 651847b (fix: 修改脚本bug)
 
 jobs:
     test:
         runs-on: ubuntu-latest
+<<<<<<< HEAD
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
@@ -19,12 +25,27 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: '16'
+=======
+        strategy:
+            matrix:
+                node-version: [20, 18, 16]
+        steps:
+            - uses: actions/checkout@v4
+            # 使用了一个名为 checkout 的官方动作，用于拉取代码库
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+              # 使用了一个名为 setup-node 的官方动作，设置 Node.js 环境，并指定了要安装的 Node.js 版本为 20
+>>>>>>> 651847b (fix: 修改脚本bug)
 
             - name: Install dependencies
               run: pnpm install
 
             - name: Run lint
               run: pnpm lint
+<<<<<<< HEAD
 
             - name: Run format
               run: pnpm format
+=======
+>>>>>>> 651847b (fix: 修改脚本bug)

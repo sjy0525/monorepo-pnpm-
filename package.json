@@ -12,15 +12,15 @@
 		"commit": "git-cz",
 		"build": "pnpm -r --filter ='./packages/*' run build"
 	},
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
-	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
 			"commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
 		}
 	},
 	"keywords": [],
